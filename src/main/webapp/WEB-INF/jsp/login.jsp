@@ -28,7 +28,9 @@
             <td><input type="submit" value="登录"></td>
         </tr>
     </form>
+
 </table>
+
 <table class="table">
     <tr>
         <td>用户名:</td>

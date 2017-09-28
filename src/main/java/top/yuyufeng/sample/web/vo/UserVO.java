@@ -1,6 +1,9 @@
 package top.yuyufeng.sample.web.vo;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class UserVO {
+    @NotEmpty(message = "用户名不能为空")
     private String userName;
     private String userPassword;
 
