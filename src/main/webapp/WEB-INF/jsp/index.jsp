@@ -9,8 +9,10 @@
 <html>
 <head>
     <title>Index</title>
+    <%@ include file="include/head.jsp" %>
 </head>
 <body>
-<h2>首页</h2>
+<h2>首页 ${time}</h2>
+<p><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss"  value="${time}"/></p>
 </body>
 </html>
