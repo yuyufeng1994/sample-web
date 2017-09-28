@@ -14,11 +14,11 @@
     <!-- 类型转化 -->
     <bean id="conversionService"
           class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
-        <!--<property name="converters">
+        <property name="converters">
             <set>
-                <bean class="web.converter.DateConverter"></bean>
+                <bean class="top.yuyufeng.sample.web.action.converter.DateConverter"></bean>
             </set>
-        </property>-->
+        </property>
     </bean>
 
     <!-- 校验器 -->
