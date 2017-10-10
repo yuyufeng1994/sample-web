@@ -3,6 +3,8 @@ package top.yuyufeng.sample.web.vo;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import javax.validation.constraints.Min;
+
 public class UserVO {
     @NotEmpty(message = "用户名不能为空")
     private String userName;
