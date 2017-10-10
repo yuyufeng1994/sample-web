@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <html>
 <head>
     <title>login</title>
@@ -41,5 +42,15 @@
         <td>${userVO.userPassword}</td>
     </tr>
 </table>
+<hr/>
+<div style="color: red">
+    <c:forEach items="${errors}" var="e">
+        <i>${e.code} ${e.defaultMessage}</i><br/>
+    </c:forEach>
+</div>
+
+<hr/>
+
+
 </body>
 </html>

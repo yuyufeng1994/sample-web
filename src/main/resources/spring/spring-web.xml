@@ -36,8 +36,11 @@
         <property name="basename" value="MyValidations"/>
     </bean>
 
+    <!-- Enables the Spring MVC @Controller programming model -->
     <mvc:annotation-driven conversion-service="conversionService"
                            validator="validator"></mvc:annotation-driven>
+
+    <context:component-scan base-package="top.yuyufeng.sample.web"/>
 
     <!--2.静态资源默认servlet配置 -->
     <!-- 1).加入对静态资源处理：js,gif,png 2).允许使用 "/" 做整体映射 -->
@@ -53,8 +56,8 @@
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-    <!--4:扫描web相关的bean -->
-    <context:component-scan base-package="top.yuyufeng.sample.web"/>
+
+
 
     <!--拦截器 -->
     <mvc:interceptors>

@@ -26,7 +26,7 @@ public class LoginController {
      * @return
      */
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String toLogin() {
+    public String toLogin(Model model) {
         return "login";
     }
 
@@ -38,18 +38,18 @@ public class LoginController {
      * @return
      */
     @RequestMapping(value = "/doLogin", method = RequestMethod.POST)
-//    public String doLogin(Model model, @Valid UserVO userVO,BindingResult br) {   //@Valid 验证   //BindingResult 验证是失败的字段的错误信息 放置在该实现类中
-    public String doLogin(Model model, UserVO userVO) {   //@Valid 验证   //BindingResult 验证是失败的字段的错误信息 放置在该实现类中
-       /* if(br.hasErrors()){
+    public String doLogin(Model model, @Valid UserVO userVO,BindingResult br) {   //@Valid 验证   //BindingResult 验证是失败的字段的错误信息 放置在该实现类中
+//    public String doLogin(Model model, UserVO userVO) {   //@Valid 验证   //BindingResult 验证是失败的字段的错误信息 放置在该实现类中
+        if(br.hasErrors()){
             //获取验证失败数量
-            LOG.debug(String.valueOf(br.getErrorCount()))
-            \            ;
+            LOG.debug(String.valueOf(br.getErrorCount()));
             List<ObjectError> errors = br.getAllErrors();
+            model.addAttribute("errors", errors);
             for(ObjectError error :errors){
                 LOG.debug(error.getDefaultMessage());
             }
             return "login";
-        }*/
+        }
         UserVO user = new UserVO();
         BeanUtils.copyProperties(userVO, user);
         model.addAttribute("userVO", user);
